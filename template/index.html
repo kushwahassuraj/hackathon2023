@@ -1,0 +1,31 @@
+
+{% load static %}
+{% include "header.html" %}
+<style>
+
+    </style>      
+<br>
+<div>
+<form class='form method' method ="GET" >
+    <input type="text" name="search" value="">
+    <input type="submit" value="search">
+</form>
+</div>
+<br>
+<br>
+
+
+<div class="feedback-container">
+
+{%for i in data%}
+<div class="feedback">
+<h3>{{i.location }}</h3>
+<hr>
+<h4>{{i.name}}</h4>
+<p>{{i.message}}</p>
+</div>
+{% empty %}
+<p style="color:red;" >no data found</p>
+{% endfor %}
+</div>
+{% include "footer.html" %}

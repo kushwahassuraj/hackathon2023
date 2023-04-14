@@ -1,0 +1,96 @@
+{% load static %}
+{% include "header.html" %}
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f2f2f2;
+  }
+  h1 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+  form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+  input, textarea {
+    display: block;
+    width: 96%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    border-radius: 3px;
+    box-shadow: 0 0 2px rgba(0,0,0,0.1);
+    font-size: 16px;
+    font-family: inherit;
+    resize: none;
+  }
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+
+  .social-media-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  .social-media-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    transition: all 0.3s ease;
+  }
+  
+  .social-media-icons a:hover {
+    background-color: black;
+  }
+  
+ 
+  
+</style>
+<h1>Send Message</h1>
+	<form action="#" method="post">
+    {% csrf_token %}
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name" required>
+		<label for="location">location:</label>
+		<input type="text" id="location" name="location" required>
+		<label for="message">Message:</label>
+		<textarea id="message" name="message" required></textarea>
+		<button type="{{ty}}"> {{ad}}</button>
+	</form>
+  <div class="social-media-icons">
+    <a href="https://www.facebook.com"> <img src="https://www.facebook.com/images/fb_icon_325x325.png"></a>
+    <a href="https://www.twitter.com"><img src="{% static 'Twitter-logo.webp' %}"></a>
+    <a href="https://www.linkedin.com"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"></a>
+  </div>
+  
+
+{% include "footer.html" %}

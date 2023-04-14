@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+       
+    <link rel="stylesheet" href={% static 'style.css' %}>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li ><a  target="_blank"  href="http://localhost:3000/">easeJourney</a></li>
+          <li ><a href="{% url 'home' %}">Reviews</a></li>
+          <li ><a href="{% url 'text' %}">leaveMessage</a></li>
+          <li ><a href="{% url 'info' %}">government representatives</a></li>
+          <li ><a href="{% url 'local' %}">local_info</a></li>
+
+      
+        </ul>
+      </nav>
+    </header>
+    
+    <main>
+      <!-- Your main content goes here -->
