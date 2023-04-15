@@ -64,7 +64,7 @@ def mc(request,id):
     df = pd.DataFrame(data[1:], columns=data[0])
     table = df.to_html()
 
-    return render(request, 'mcd.html', {'data': table})
+    return render(request, 'mcd.html', {'data': table,'title':id})
 def text(r):
    
   
